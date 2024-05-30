@@ -143,16 +143,16 @@ do
 done 
 
 # Set the wallpaper
-exec swaybg -i $RIVER_DIR/hexcore.png --mode fill &
+exec swaybg -i $HOME/Pictures/Backgrounds/hexcore.png --mode fill &
 
 # Set a screen timeout
 exec swayidle -w \
   timeout 600 'swaylock -f -c 000000' \
-  timeout 1200 '$RIVER_DIR/monitor-power.sh --off' \
-  resume '$RIVER_DIR/monitor-power.sh --on && $RIVER_DIR/monitor-scale.sh' \
+  timeout 1200 '$HOME/.config/scripts/monitor-power.sh --off' \
+  resume '$HOME/.config/scripts/monitor-power.sh --on && $HOME/.config/scripts/monitor-scale.sh' \
   before-sleep 'swaylock -f -c 000000' &
 
-exec $RIVER_DIR/monitor-scale.sh &
+exec $HOME/.config/scripts/monitor-scale.sh &
 
 exec waybar &
 
