@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+
+#  ________  ___  ___      ___ _______   ________     
+# |\   __  \|\  \|\  \    /  /|\  ___ \ |\   __  \    
+# \ \  \|\  \ \  \ \  \  /  / | \   __/|\ \  \|\  \   
+#  \ \   _  _\ \  \ \  \/  / / \ \  \_|/_\ \   _  _\  
+#   \ \  \\  \\ \  \ \    / /   \ \  \_|\ \ \  \\  \| 
+#    \ \__\\ _\\ \__\ \__/ /     \ \_______\ \__\\ _\ 
+#     \|__|\|__|\|__|\|__|/       \|_______|\|__|\|__|
+# 
+# Config by AJ Reifsnyder
+
+export RIVER_DIR=$HOME/.config/river
+
+MOD="Super"
+MOD2="Alt"
+
+if [ "$HOSTNAME" = "laptop" ]; then 
+  MOD="Alt"
+  MOD2="Super"
+fi
+
+### Keybinds ###
+
+# Spawning 
+riverctl map normal $MOD R spawn "$HOME/.config/rofi/rofi-config.sh"
+riverctl map normal $MOD Space spawn alacritty
+
+# Closing
+riverctl map normal $MOD W close
+riverctl map normal $MOD+Control Q exit
+riverctl map normal $MOD+Control L spawn "swaylock -f -c 000000"
+
+# Move focus
+riverctl map normal $MOD J focus-view next 
+riverctl map normal $MOD K focus-view previous  
+riverctl map normal $MOD Period focus-output next
+riverctl map normal $MOD Comma focus-output previous
+
+# Swapping containers
+riverctl map normal $MOD+Shift J swap next 
+riverctl map normal $MOD+Shift K swap previous 
+riverctl map normal $MOD+Shift Period send-to-output next
+riverctl map normal $MOD+Shift Comma send-to-output previous
+riverctl map normal $MOD Return zoom
+
+# Manually moving containers
+riverctl map normal $MOD+$MOD2 H move left 100
+riverctl map normal $MOD+$MOD2 J move down 100
+riverctl map normal $MOD+$MOD2 K move up 100
+riverctl map normal $MOD+$MOD2 L move right 100
+riverctl map normal $MOD+$MOD2+Control H snap left
+riverctl map normal $MOD+$MOD2+Control J snap down
+riverctl map normal $MOD+$MOD2+Control K snap up
+riverctl map normal $MOD+$MOD2+Control L snap right
+
+# Resizing
+riverctl map normal $MOD+$MOD2+Shift H resize horizontal -100
+riverctl map normal $MOD+$MOD2+Shift J resize vertical 100
+riverctl map normal $MOD+$MOD2+Shift K resize vertical -100
+riverctl map normal $MOD+$MOD2+Shift L resize horizontal 100
+
+# Mousing
+riverctl map-pointer normal $MOD BTN_LEFT move-view
+riverctl map-pointer normal $MOD BTN_RIGHT resize-view
+riverctl map-pointer normal $MOD BTN_MIDDLE toggle-float
+
+# Screenshot
+riverctl map normal $MOD P spawn "grim - | wl-copy"
+
+# Floating / Fullscreen
+riverctl map normal $MOD+Shift Return toggle-float
+riverctl map normal $MOD F toggle-fullscreen
+
+### Tag Controls ###
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    riverctl map normal $MOD $i set-focused-tags $tags
+    riverctl map normal $MOD+Shift $i set-view-tags $tags
+    riverctl map normal $MOD+Control $i toggle-focused-tags $tags
+    riverctl map normal $MOD+Shift+Control $i toggle-view-tags $tags
+done
+
+all_tags=$(((1 << 32) - 1))
+riverctl map normal $MOD 0 set-focused-tags $all_tags
+riverctl map normal $MOD+Shift 0 set-view-tags $all_tags
+
+# Declare a passthrough mode. This mode has only a single mapping to return to
+# normal mode. This makes it useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+
+# $MOD+F11 to enter passthrough mode
+riverctl map normal $MOD F11 enter-mode passthrough
+
+# $MOD+F11 to return to normal mode
+riverctl map passthrough $MOD F11 enter-mode normal
+
+# Various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked
+do
+    # Eject the optical drive (well if you still have one that is)
+    riverctl map $mode None XF86Eject spawn 'eject -T'
+
+    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+
+    # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
+    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
+    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
+
+    # Control screen backlight brightness with light (https://github.com/haikarainen/light)
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+done
+
+# Set background and border color
+riverctl background-color 0x11111b
+riverctl border-color-focused 0xb4befe
+riverctl border-color-unfocused 0x11111b
+
+# Set keyboard repeat rate
+riverctl set-repeat 50 400
+
+riverctl focus-follows-cursor always
+
+riverctl rule-add ssd
+riverctl rule-add -app-id org.keepassxc.KeePassXC tags 10000
+
+# Configure the touchpad(s) 
+for touchpad in $(riverctl list-inputs | awk '/[t|T]ouchpad/')
+do 
+  riverctl input $touchpad natural-scroll enabled
+  riverctl input $touchpad tap enabled
+  riverctl input $touchpad middle-emulation enabled
+  riverctl input $touchpad disable-while-typing enabled
+done 
+
+# Set the wallpaper
+exec swaybg -i $RIVER_DIR/hexcore.png --mode fill &
+
+# Set a screen timeout
+exec swayidle -w \
+  timeout 600 'swaylock -f -c 000000' \
+  timeout 1200 '$RIVER_DIR/monitor-power.sh --off' \
+  resume '$RIVER_DIR/monitor-power.sh --on && $RIVER_DIR/monitor-scale.sh' \
+  before-sleep 'swaylock -f -c 000000' &
+
+exec $RIVER_DIR/monitor-scale.sh &
+
+exec waybar &
+
+exec dunst &
+
+exec keepassxc & 
+
+# Start the layout generator
+riverctl default-layout bsp-layout
+exec river-bsp-layout -i 5 -o 10 &
