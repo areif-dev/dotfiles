@@ -1,0 +1,9 @@
+{
+  "htmldjango.djhtml.tabWidth": 2,
+  "htmldjango.hoverLang": "jinja2",
+  "htmldjango.djlint.profile": "jinja",
+
+  "html.format.wrapLineLength": 79,
+  "html.format.wrapAttributes": "auto",
+  "html.format.templating": true
+}
