@@ -1,5 +1,8 @@
 [[ $- == *i* ]] && source $HOME/.local/share/blesh/ble.sh --noattach
 
+shopt -s histappend
+export HISTFILESIZE=
+export HISTSIZE=
 export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.local/share:$HOME/.cargo/bin:$PATH
 
 if command -v nvim &> /dev/null; then
