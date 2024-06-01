@@ -1,0 +1,36 @@
+# If you come from bash you might have to change your $PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.local/share:$HOME/.cargo/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+if command -v nvim &> /dev/null; then
+    export EDITOR="nvim"
+elif command -v vim &> /dev/null; then
+    export EDITOR="vim"
+elif command -v vi &> /dev/null; then
+    export EDITOR="vi"
+elif command -v nano &> /dev/null; then
+    export EDITOR="nano"
+fi
+
+export LEDGER_FILE="$HOME/Sync/2023-06.journal"
+
+DISABLE_AUTO_UPDATE=true
+
+ZSH_THEME="alanpeabody"
+
+source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+alias la="ls -a"
+alias ll="ls -lah --color=auto"
+alias led="hledger -f $LEDGER_FILE"
+
+if command -v starship &> /dev/null; then
+    eval "$(starship init zsh)"
+fi
+
+if command -v atuin &> /dev/null; then
+    eval "$(atuin init zsh)"
+fi
