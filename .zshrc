@@ -14,7 +14,7 @@ elif command -v nano &> /dev/null; then
     export EDITOR="nano"
 fi
 
-export LEDGER_FILE="$HOME/Sync/2023-06.journal"
+export LEDGER_FILE="$HOME/Sync/2024.journal"
 
 DISABLE_AUTO_UPDATE=true
 
