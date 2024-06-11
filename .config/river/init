@@ -131,7 +131,6 @@ riverctl set-repeat 50 400
 riverctl focus-follows-cursor always
 
 riverctl rule-add ssd
-riverctl rule-add -app-id org.keepassxc.KeePassXC tags 10000
 
 # Configure the touchpad(s) 
 for touchpad in $(riverctl list-inputs | awk '/[t|T]ouchpad/')
@@ -158,8 +157,15 @@ exec waybar &
 
 exec dunst &
 
-exec keepassxc & 
-
 # Start the layout generator
 riverctl default-layout bsp-layout
 exec river-bsp-layout -i 5 -o 10 &
+
+# Spawn KeePassXC on tag 5
+riverctl rule-add -app-id org.keepassxc.KeePassXC tags 10000
+riverctl spawn keepassxc
+
+# Sleep is necessary to allow the KeePassXC to spawn before removing the rule, otherwise,
+# it would just spawn on the first tag 
+sleep 1
+riverctl rule-del -app-id org.keepassxc.KeePassXC tags
