@@ -21,5 +21,8 @@ set.updatetime = 250
 vim.cmd [[
   autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus = false})
 ]]
+vim.cmd [[
+  au BufRead,BufNewFile *.bu set filetype=yaml
+]]
 
 require("catppuccin").setup()
