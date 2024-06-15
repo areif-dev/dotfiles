@@ -1,0 +1,30 @@
+#!/usr/bin/env bash 
+
+if ! command -v distrobox &> /dev/null; then
+    echo "distrobox could not be found"
+    exit 1
+fi
+
+if ! command -v rebase-distrobox &> /dev/null; then 
+    echo "rebase-distrobox command could not be found"
+    exit 2
+fi
+
+mapfile -t lines < <(distrobox list | tail -n +2)
+for line in "${lines[@]}"; do 
+    name="$(echo "$line" | awk '{print $3}')"
+    image_url="$(echo "$line" | awk '{print $NF}' | awk -F ':' '{NF--; print}')"
+    full_tag="$image_url:latest"
+
+    echo "$(date '+%Y-%m-%d %H:%M') Rebasing $name to $full_tag"
+    rebase-distrobox "$name" "$full_tag"
+done
+
+# declare -a images=$(distrobox list | awk '{print $3}' | tail -n +2)
+# declare -a repos=$(distrobox list | awk '{print $NF}' | tail -n +3 | awk -F ':' '{NF--; print}')
+# 
+# for i in "${!images[@]}"; do
+#     full_tag="${repos[i]}:latest"
+#     echo "$(date +%Y-%m-%dT%H:%M) Rebasing ${images[i]} to $full_tag"
+#     # $HOME/bin/rebase.sh "${images[i]}" "$full_tag"
+# done
