@@ -1,3 +1,5 @@
 [user]
 	email = ajreifsnyder@protonmail.com
 	name = areif-dev
+[init]
+	defaultBranch = main
