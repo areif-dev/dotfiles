@@ -1,0 +1,9 @@
+#!/usr/bin/env bash 
+
+xdg-user-dirs-update 
+git clone https://github.com/ohmyzsh/ohmyzsh ~/Downloads/
+exec ~/Downloads/ohmyzsh/tools/install.sh
+rm -rf ~/Downloads/ohmyzsh
+printf 'y\n' | distrobox create --image ghcr.io/areif-dev/distrobox-images/fedora-dev --name dev
+printf 'y\n' | distrobox create --image ghcr.io/areif-dev/distrobox-images/fedora-prod --name prod 
+printf 'y\n' | distrobox create --image ghcr.io/areif-dev/distrobox-images/fedora-rec --name rec 
