@@ -38,8 +38,8 @@ riverctl map normal $MOD Period focus-output next
 riverctl map normal $MOD Comma focus-output previous
 
 # Swapping containers
-riverctl map normal $MOD+Shift J swap next 
-riverctl map normal $MOD+Shift K swap previous 
+riverctl map normal $MOD+Control J swap next 
+riverctl map normal $MOD+Control K swap previous 
 riverctl map normal $MOD+Shift Period send-to-output next
 riverctl map normal $MOD+Shift Comma send-to-output previous
 riverctl map normal $MOD Return zoom
@@ -59,6 +59,10 @@ riverctl map normal $MOD+$MOD2+Shift H resize horizontal -100
 riverctl map normal $MOD+$MOD2+Shift J resize vertical 100
 riverctl map normal $MOD+$MOD2+Shift K resize vertical -100
 riverctl map normal $MOD+$MOD2+Shift L resize horizontal 100
+riverctl map normal $MOD+Shift H riverctl send-layout-cmd bsp-layout "dec-vsplit-perc .001"
+riverctl map normal $MOD+Shift L riverctl send-layout-cmd bsp-layout "inc-vsplit-perc .001"
+riverctl map normal $MOD+Shift J riverctl send-layout-cmd bsp-layout "inc-hsplit-perc .001"
+riverctl map normal $MOD+Shift K riverctl send-layout-cmd bsp-layout "inc-hsplit-perc .001"
 
 # Mousing
 riverctl map-pointer normal $MOD BTN_LEFT move-view
