@@ -130,7 +130,11 @@ riverctl border-color-focused 0xb4befe
 riverctl border-color-unfocused 0x11111b
 
 # Set keyboard repeat rate
-riverctl set-repeat 50 400
+if [ $HOSTNAME == "laptop" ]; then 
+    riverctl set-repeat 40 500
+else
+    riverctl set-repeat 50 400
+fi
 
 riverctl focus-follows-cursor always
 
