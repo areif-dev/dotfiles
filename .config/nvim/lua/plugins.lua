@@ -53,6 +53,20 @@ local packages = {
       require("neo-tree").setup()
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter", 
+    build = ":TSUpdate",
+    config = function()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python" },
+        sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end
+  }
 }
 
 require("lazy").setup(packages)
