@@ -1,7 +1,7 @@
 {
   "catppuccin": { "branch": "main", "commit": "5215ea59df6d0a7e27da9a5cd1165e06d1b04cbe" },
   "coc.nvim": { "branch": "release", "commit": "f0ce9ae23d6ce9d0cbabe73bdb738e45accc6f08" },
-  "lazy.nvim": { "branch": "main", "commit": "24fa2a97085ca8a7220b5b078916f81e316036fd" },
+  "lazy.nvim": { "branch": "main", "commit": "c501b429cf995c645454539b924aaefae45bb9eb" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "29f7c215332ba95e470811c380ddbce2cebe2af4" },
   "nui.nvim": { "branch": "main", "commit": "b1b3dcd6ed8f355c78bad3d395ff645be5f8b6ae" },
   "nvim-web-devicons": { "branch": "master", "commit": "b77921fdc44833c994fdb389d658ccbce5490c16" },
