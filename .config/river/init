@@ -157,15 +157,9 @@ exec swayidle -w \
 
 exec $HOME/.config/scripts/monitor-scale.sh &
 
-if [ command -v waybar ]; then 
-    exec waybar &
-fi
-if [ command -v dunst ]; then
-    exec dunst &
-fi
-if [ command -v syncthing ]; then 
-    exec syncthing &
-fi
+exec waybar &
+exec dunst &
+exec syncthing &
 
 # Start the layout generator
 riverctl default-layout bsp-layout
