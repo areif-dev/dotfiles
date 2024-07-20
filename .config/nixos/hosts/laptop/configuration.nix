@@ -187,11 +187,10 @@
     gvfs.enable = true;  # Enable mounting, trash, etc for Thunar
     tumbler.enable = true;  # Thumbnail support for images 
 
-    # syncthing = {
-    #   enable = true;
-    #   user = "aj";
-    #   settings.gui.user = "aj";
-    # };
+    transmission = {
+      user = "aj";
+      enable = true;
+    };
   };
 
   xdg.portal = {
