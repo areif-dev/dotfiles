@@ -74,6 +74,7 @@
       libreoffice-still
       nodejs
       neovim
+      nwg-look
       papirus-icon-theme
       pavucontrol
       plocate
