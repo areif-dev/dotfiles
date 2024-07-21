@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixstable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixstable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -31,6 +31,14 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hosts/home-nas/configuration.nix
+            # inputs.home-manager.nixosModules.default
+          ];
+        };
+
+        remote = nixstable.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [ 
+            ./hosts/remote/configuration.nix
             # inputs.home-manager.nixosModules.default
           ];
         };
