@@ -203,6 +203,7 @@
       enable = true;
       defaultNetwork.settings.dns_enabled = true;
     };
+    libvirtd.enable = true;
   };
 
   # Open ports in the firewall.
