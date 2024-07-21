@@ -127,30 +127,34 @@
 
   hardware.bluetooth.enable = true;
 
-  programs.river.enable = true;
-  programs.waybar.enable = true;
+  programs = {
+    river.enable = true;
+    waybar.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    ohMyZsh.enable = true; 
-    autosuggestions.enable = true;
-  };
+    zsh = {
+      enable = true;
+      ohMyZsh.enable = true; 
+      autosuggestions.enable = true;
+    };
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = false;
-    dedicatedServer.openFirewall = false;
-    gamescopeSession.enable = true;
-  };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = false;
+      dedicatedServer.openFirewall = false;
+      gamescopeSession.enable = true;
+    };
 
-  programs.thunar = {
-    enable = true; 
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin 
-      thunar-volman
-    ];
+    thunar = {
+      enable = true; 
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin 
+        thunar-volman
+      ];
+    };
+    xfconf.enable = true; 
+
+    virt-manager.enable = true;
   };
-  programs.xfconf.enable = true; 
 
   # List services that you want to enable:
   services = {
