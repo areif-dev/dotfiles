@@ -20,8 +20,8 @@ DISABLE_AUTO_UPDATE=true
 
 ZSH_THEME="alanpeabody"
 
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $ZSH/oh-my-zsh.sh
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias la="ls -a"
 alias ll="ls -lah --color=auto"

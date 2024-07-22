@@ -105,6 +105,7 @@
     htop
     killall
     libgcc
+    lxqt.lxqt-policykit
     neovim
     python3
     unzip
