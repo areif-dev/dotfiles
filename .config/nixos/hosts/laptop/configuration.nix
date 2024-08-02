@@ -72,6 +72,8 @@
       keepassxc
       krita
       libreoffice-still
+      localsend
+      mullvad-vpn
       nodejs
       neovim
       nwg-look
@@ -89,6 +91,7 @@
       syncthing
       tldr
       tor-browser
+      transmission_4-gtk
       viu
       vlc
       wl-clipboard
@@ -186,17 +189,14 @@
       localuser = null;
     };
 
+    mullvad-vpn.enable = true;
+
     gnome.gnome-keyring.enable = true;
 
     tailscale.enable = true;
 
     gvfs.enable = true;  # Enable mounting, trash, etc for Thunar
     tumbler.enable = true;  # Thumbnail support for images 
-
-    transmission = {
-      user = "aj";
-      enable = true;
-    };
   };
 
   xdg.portal = {
