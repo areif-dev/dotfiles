@@ -59,10 +59,10 @@ riverctl map normal $MOD+$MOD2+Shift H resize horizontal -100
 riverctl map normal $MOD+$MOD2+Shift J resize vertical 100
 riverctl map normal $MOD+$MOD2+Shift K resize vertical -100
 riverctl map normal $MOD+$MOD2+Shift L resize horizontal 100
-riverctl map normal $MOD+Shift H send-layout-cmd bsp-layout "dec-vsplit-perc .005"
-riverctl map normal $MOD+Shift L send-layout-cmd bsp-layout "inc-vsplit-perc .005"
-riverctl map normal $MOD+Shift J send-layout-cmd bsp-layout "inc-hsplit-perc .005"
-riverctl map normal $MOD+Shift K send-layout-cmd bsp-layout "dec-hsplit-perc .005"
+riverctl map normal $MOD+Shift H send-layout-cmd bsp-layout "--dec-vsplit .005"
+riverctl map normal $MOD+Shift L send-layout-cmd bsp-layout "--inc-vsplit .005"
+riverctl map normal $MOD+Shift J send-layout-cmd bsp-layout "--inc-hsplit .005"
+riverctl map normal $MOD+Shift K send-layout-cmd bsp-layout "--dec-hsplit .005"
 
 # Mousing
 riverctl map-pointer normal $MOD BTN_LEFT move-view
