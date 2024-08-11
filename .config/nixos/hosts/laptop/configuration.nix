@@ -155,6 +155,9 @@
         thunar-volman
       ];
     };
+
+    thunderbird.enable = true;
+
     xfconf.enable = true; 
 
     virt-manager.enable = true;
