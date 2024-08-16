@@ -68,6 +68,7 @@ riverctl map normal $MOD+Shift K send-layout-cmd bsp-layout "--dec-hsplit .005"
 riverctl map-pointer normal $MOD BTN_LEFT move-view
 riverctl map-pointer normal $MOD BTN_RIGHT resize-view
 riverctl map-pointer normal $MOD BTN_MIDDLE toggle-float
+riverctl set-cursor-warp on-focus-change
 
 # Screenshot
 riverctl map normal $MOD P spawn "grim - | wl-copy"
