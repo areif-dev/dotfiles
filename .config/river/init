@@ -172,11 +172,11 @@ riverctl rule-add -app-id org.keepassxc.KeePassXC tags 10000
 riverctl spawn keepassxc
 
 # Spawn Thunderbird on tag 4
-riverctl rule-add -app-id org.mozilla.thunderbird tags 01000
+riverctl rule-add -title "*Thunderbird*" tags 01000
 riverctl spawn thunderbird
 
 # Sleep is necessary to allow KeePassXC and Thunderbird to spawn before removing 
 # the rule, otherwise, it would just spawn on the first tag 
-sleep 3
+sleep 1
 riverctl rule-del -app-id org.keepassxc.KeePassXC tags
-riverctl rule-del -app-id org.mozilla.thunderbird tags
+riverctl rule-add -title "*Thunderbird*" tags 01000
