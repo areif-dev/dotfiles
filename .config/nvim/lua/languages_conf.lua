@@ -1,7 +1,18 @@
 local set = vim.opt
 
+local make_html_conf = function()
+  local html_pattern = {"*.html", "*.django", "*.jango", "*.hbs"}
+  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, 
+    {
+      pattern = html_pattern,
+      callback = function()
+        vim.bo.filetype = "htmldjango"
+      end
+    })
+end
+
 local make_web_stack_conf = function()
-  local web_stack_pattern = {"*.html", "*.jango", "*.css", "*.js", "*.jsx", "*.json", "*.ts", "*.tsx"}
+  local web_stack_pattern = {"*.html", "*.django", "*.jango", "*.hbs", "*.css", "*.js", "*.jsx", "*.json", "*.ts", "*.tsx"}
   vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"},
   {
     pattern = web_stack_pattern,
@@ -44,8 +55,8 @@ local make_server_stack_conf = function()
     command = ":CocCommand editor.action.formatDocument"
   })
 end
-  
 
+make_html_conf()
 make_web_stack_conf()
 make_lua_config()
 make_server_stack_conf()
