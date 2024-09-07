@@ -80,6 +80,7 @@
       papirus-icon-theme
       pavucontrol
       plocate
+      remmina
       ripgrep
       rofi-wayland
       rustup
