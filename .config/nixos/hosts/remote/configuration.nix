@@ -94,11 +94,6 @@
   #   enableSSHSupport = true;
   # };
 
-  security.acme = {
-    acceptTerms = true; 
-    defaults.email = "ajreifsnyder@protonmail.com";
-  };
-
   # List services that you want to enable:
   services = {
     openssh.enable = true;
@@ -109,18 +104,6 @@
       package = pkgs.plocate;
       enable = true;
       localuser = null;
-    };
-
-    nginx = {
-      enable = true; 
-      package = pkgs.nginxStable.override { openssl = pkgs.libressl; };
-      virtualHosts = {
-        "ajreifsnyder.com" = {
-          forceSSL = true; 
-          enableACME = true; 
-          locations."/".root = "/var/www";
-        };
-      };
     };
   };
 
