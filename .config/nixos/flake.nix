@@ -38,7 +38,7 @@
         remote = nixstable.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./hosts/remote/configuration.nix
+            ./hosts/ajreifsnyder.com/configuration.nix
             # inputs.home-manager.nixosModules.default
           ];
         };
