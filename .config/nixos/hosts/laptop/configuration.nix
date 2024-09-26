@@ -199,6 +199,8 @@
 
     tailscale.enable = true;
 
+    ratbagd.enable = true;
+
     gvfs.enable = true;  # Enable mounting, trash, etc for Thunar
     tumbler.enable = true;  # Thumbnail support for images 
   };
