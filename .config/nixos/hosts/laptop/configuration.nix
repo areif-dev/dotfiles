@@ -179,6 +179,12 @@
     # Enable the OpenSSH daemon.
     openssh.enable = true;
 
+    ollama = {
+        enable = true; 
+        acceleration = "rocm";
+        loadModels = [ "llama3.2:1b" ];
+    };
+
     pipewire = {
       enable = true;
       alsa.enable = true;
