@@ -1,0 +1,29 @@
+Logitech G502 X
+             Model: usb:046d:c099:0
+ Number of Buttons: 11
+    Number of Leds: 0
+Number of Profiles: 5
+Profile 0: (disabled)
+Profile 1: (active)
+  Name: n/a
+  Report Rate: 1000Hz
+  Resolutions:
+    0: 400dpi
+    1: 800dpi
+    2: 1600dpi (active) (default)
+    3: 2400dpi
+    4: 3200dpi
+  Button: 0 is mapped to 'button 1'
+  Button: 1 is mapped to 'button 2'
+  Button: 2 is mapped to 'button 3'
+  Button: 3 is mapped to 'button 4'
+  Button: 4 is mapped to 'button 7'
+  Button: 5 is mapped to 'button 5'
+  Button: 6 is mapped to 'wheel-left'
+  Button: 7 is mapped to 'wheel-right'
+  Button: 8 is mapped to 'button 6'
+  Button: 9 is mapped to 'resolution-up'
+  Button: 10 is mapped to 'resolution-down'
+Profile 2: (disabled)
+Profile 3: (disabled)
+Profile 4: (disabled)
