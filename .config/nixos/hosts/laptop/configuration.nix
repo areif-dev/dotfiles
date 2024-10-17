@@ -95,6 +95,7 @@
       transmission_4-gtk
       viu
       vlc
+      webcord
       wl-clipboard
       wlr-randr
     ];
@@ -134,6 +135,7 @@
 
   programs = {
     river.enable = true;
+    hyprland.enable = true;
     waybar.enable = true;
 
     zsh = {
