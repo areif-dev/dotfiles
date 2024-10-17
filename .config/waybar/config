@@ -10,10 +10,15 @@
 
     "modules-left": ["tray", "idle_inhibitor", "cpu", "temperature", "network"],
     "modules-center": ["battery", "battery#bat2", "clock", "memory"],
-    "modules-right": ["backlight", "pulseaudio", "river/tags"],
+    "modules-right": ["backlight", "pulseaudio", "river/tags", "hyprland/workspaces"],
 
     // Modules configuration
 
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 5,
+        }
+    },
     "river/tags": {
         "num-tags": 5,
     },
