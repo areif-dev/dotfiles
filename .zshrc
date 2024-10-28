@@ -27,8 +27,7 @@ fi
 
 alias la="ls -a"
 alias ll="ls -lah --color=auto"
-alias led="hledger -f $LEDGER_FILE"
-alias lu="ledger-utils"
+alias led="hledger"
 
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
