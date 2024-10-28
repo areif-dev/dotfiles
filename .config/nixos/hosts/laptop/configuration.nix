@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -113,9 +113,14 @@
     lxqt.lxqt-policykit
     neovim
     python3
+    rose-pine-cursor
     unzip
     wget
     zip
+  ]
+  ++ 
+  [
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   fonts.packages = with pkgs; [
