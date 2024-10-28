@@ -1,0 +1,15 @@
+#!/usr/bin/env python 
+
+import socket 
+import subprocess 
+import os
+
+
+main_mod = "Super"
+if socket.gethostname() == "laptop":
+    main_mod = "ALT"
+
+with open(f"{os.environ['HOME']}/.config/hypr/system_specifics.conf", "w") as f:
+    f.write(f"$mainMod = {main_mod}")
+    
+subprocess.run("Hyprland")
