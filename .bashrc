@@ -1,4 +1,4 @@
-[[ $- == *i* ]] && source $HOME/.local/share/blesh/ble.sh --noattach
+# [[ $- == *i* ]] && source $HOME/.local/share/blesh/ble.sh --noattach
 
 shopt -s histappend
 export HISTFILESIZE=
@@ -25,7 +25,7 @@ if command -v starship &> /dev/null; then
     eval "$(starship init bash)"
 fi
 
-[[ ${BLE_VERSION-} ]] && ble-attach
+# [[ ${BLE_VERSION-} ]] && ble-attach
 
 if command -v atuin &> /dev/null; then
     eval "$(atuin init bash)"
