@@ -67,10 +67,10 @@
       dunst
       firefox
       freetube
+      gimp
       grim
       hledger
       keepassxc
-      krita
       libreoffice-still
       localsend
       mullvad-vpn
