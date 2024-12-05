@@ -1,5 +1,5 @@
 [Unit]
-Description=Daily run of upgrade-all-distroboxes
+Description=Weekly run of upgrade-all-distroboxes
 
 [Timer]
 OnCalendar=weekly
