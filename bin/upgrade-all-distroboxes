@@ -18,6 +18,7 @@ for line in "${lines[@]}"; do
 
     echo "$(date '+%Y-%m-%d %H:%M') Rebasing $name to $full_tag"
     rebase-distrobox "$name" "$full_tag"
+    distrobox enter "$name" -- export-apps
 done
 
 # declare -a images=$(distrobox list | awk '{print $3}' | tail -n +2)
