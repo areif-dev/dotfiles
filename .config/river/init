@@ -177,6 +177,6 @@ riverctl spawn thunderbird
 
 # Sleep is necessary to allow KeePassXC and Thunderbird to spawn before removing 
 # the rule, otherwise, it would just spawn on the first tag 
-sleep 1
+sleep 5
 riverctl rule-del -app-id org.keepassxc.KeePassXC tags
-riverctl rule-add -title "*Thunderbird*" tags 01000
+riverctl rule-del -title "*Thunderbird*" tags 01000
