@@ -105,6 +105,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     bc
+    distrobox
     gcc
     git
     htop
