@@ -1,0 +1,12 @@
+#!/usr/bin/env bash 
+
+if ! command -v distrobox &> /dev/null; then
+    echo "distrobox could not be found"
+    exit 1
+fi
+
+mapfile -t lines < <(distrobox list | tail -n +2)
+for line in "${lines[@]}"; do 
+    name="$(echo "$line" | awk '{print $3}')"
+    distrobox enter "$name" -- echo "hello world" > /dev/null
+done
