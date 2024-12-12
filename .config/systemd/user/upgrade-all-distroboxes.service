@@ -3,4 +3,4 @@ Description=Rebase all installed distroboxes on their latest images
 After=network-online.target
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/upgrade-all-distroboxes
+ExecStart=/usr/bin/env upgrade-all-distroboxes
