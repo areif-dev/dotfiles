@@ -28,6 +28,7 @@ fi
 alias la="ls -a"
 alias ll="ls -lah --color=auto"
 alias led="hledger"
+alias ollama="podman exec -it ollama ollama"
 
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
