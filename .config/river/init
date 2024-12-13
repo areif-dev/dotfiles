@@ -161,6 +161,7 @@ exec $HOME/.config/scripts/monitor-scale.sh &
 exec waybar &
 exec dunst &
 exec syncthing &
+exec start-all-distroboxes
 
 # Start the layout generator
 riverctl default-layout bsp-layout
