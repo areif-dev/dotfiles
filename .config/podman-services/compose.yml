@@ -6,4 +6,4 @@ services:
       - $HOME/.ollama:/root/.ollama:z
     ports:
       - 11434:11434
-    restart: unless-stopped
+    restart: always
