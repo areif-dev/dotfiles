@@ -4,6 +4,7 @@ xdg-user-dirs-update
 distrobox create --image ghcr.io/areif-dev/distrobox-images/fedora-dev --name dev --pull
 distrobox create --image ghcr.io/areif-dev/distrobox-images/fedora-prod --name prod --pull
 distrobox create --image ghcr.io/areif-dev/distrobox-images/fedora-rec --name rec --pull
+distrobox enter dev -- export-apps 2> /dev/null
 distrobox enter prod -- export-apps 2> /dev/null
 distrobox enter rec -- export-apps 2> /dev/null
 systemctl --user enable --now upgrade-all-distroboxes.timer
