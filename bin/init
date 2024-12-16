@@ -8,6 +8,3 @@ distrobox enter dev -- export-apps 2> /dev/null
 distrobox enter prod -- export-apps 2> /dev/null
 distrobox enter rec -- export-apps 2> /dev/null
 systemctl --user enable --now upgrade-all-distroboxes.timer
-git clone https://github.com/ohmyzsh/ohmyzsh ~/Downloads
-exec ~/Downloads/ohmyzsh/tools/install.sh
-rm -rf ~/Downloads/ohmyzsh
