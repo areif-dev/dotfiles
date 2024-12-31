@@ -20,10 +20,8 @@ DISABLE_AUTO_UPDATE=true
 
 ZSH_THEME="alanpeabody"
 
-if [ "$HOSTNAME" = "desktop" ]; then 
-    source $ZSH/oh-my-zsh.sh
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias la="ls -a"
 alias ll="ls -lah --color=auto"
