@@ -43,5 +43,5 @@ fi
 home_dir=$(distrobox enter "$checked_container_name" -- printenv HOME 2> /dev/null)
 
 distrobox stop --yes "$checked_container_name"
-printf 'y\nn\n' | distrobox rm "$checked_container_name"
+printf 'y\n' | distrobox rm "$checked_container_name"
 distrobox create --image "$image_name" --name "$checked_container_name" --home "$home_dir" --pull
