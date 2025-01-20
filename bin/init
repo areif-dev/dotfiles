@@ -10,6 +10,7 @@ distrobox enter rec -- export-apps 2> /dev/null
 systemctl --user enable --now upgrade-all-distroboxes.timer
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+xdg-mime default thunar.desktop inode/directory
 
 cd ~/.config/podman-services
 sudo podman-compose systemd -a create-unit
