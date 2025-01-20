@@ -9,6 +9,8 @@ distrobox enter prod -- export-apps 2> /dev/null
 distrobox enter rec -- export-apps 2> /dev/null
 systemctl --user enable --now upgrade-all-distroboxes.timer
 
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 cd ~/.config/podman-services
 sudo podman-compose systemd -a create-unit
 podman-compose systemd -a register
