@@ -64,6 +64,7 @@
       alacritty
       bluez
       bluez-tools
+      discord-canary
       dunst
       firefox
       freetube
