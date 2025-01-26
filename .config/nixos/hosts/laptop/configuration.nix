@@ -118,6 +118,7 @@
     lxqt.lxqt-policykit
     neovim
     python3
+    river-bsp-layout
     rose-pine-cursor
     unzip
     wget
