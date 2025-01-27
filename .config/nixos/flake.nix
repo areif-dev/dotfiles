@@ -5,7 +5,6 @@
     pkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     pkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-    pkgs-192e92d.url = "github:nixos/nixpkgs/192e92d56844a401ed77011ff476f6d40864eeb5";
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -13,7 +12,7 @@
     # };
   };
 
-  outputs = { self, pkgs-unstable, pkgs-stable, pkgs-192e92d, ... }@inputs:
+  outputs = { self, pkgs-unstable, pkgs-stable, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = pkgs-unstable.legacyPackages.${system};
@@ -24,10 +23,6 @@
         laptop = pkgs-unstable.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
-            pkgs-192e92d = import pkgs-192e92d {
-              inherit system; 
-              config.allowUnfree = true;
-            };
           };
           modules = [ 
             ./hosts/laptop/configuration.nix

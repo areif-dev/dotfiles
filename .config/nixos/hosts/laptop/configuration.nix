@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, pkgs-192e92d, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -191,12 +191,6 @@
 
     # Enable the OpenSSH daemon.
     openssh.enable = true;
-
-    ollama = {
-        enable = true; 
-        acceleration = "rocm";
-        package = pkgs-192e92d.ollama;
-    };
 
     pipewire = {
       enable = true;
