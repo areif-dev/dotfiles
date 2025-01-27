@@ -205,6 +205,11 @@
       enable = true;
     };
 
+    ollama = {
+        enable = true;
+        acceleration = false;  # No supported GPUs available on laptop
+    };
+
     mullvad-vpn.enable = true;
 
     gnome.gnome-keyring.enable = true;
