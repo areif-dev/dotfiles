@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, pkgs-192e92d, ... }:
 
 {
   imports =
@@ -195,6 +195,7 @@
     ollama = {
         enable = true; 
         acceleration = "rocm";
+        package = pkgs-192e92d.ollama;
     };
 
     pipewire = {
@@ -208,7 +209,6 @@
     locate = {
       package = pkgs.plocate;
       enable = true;
-      localuser = null;
     };
 
     mullvad-vpn.enable = true;
