@@ -24,22 +24,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732837521,
-        "narHash": "sha256-jNRNr49UiuIwaarqijgdTR2qLPifxsVhlJrKzQ8XUIE=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "970e93b9f82e2a0f3675757eb0bfc73297cc6370",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1710272261,
         "narHash": "sha256-g0bDwXFmTE7uGDOs9HcJsfLFhH7fOsASbAuOzDC+fhQ=",
         "owner": "NixOS",
@@ -54,41 +38,57 @@
         "type": "github"
       }
     },
-    "nixstable": {
+    "pkgs-stable": {
       "locked": {
-        "lastModified": 1732749044,
-        "narHash": "sha256-T38FQOg0BV5M8FN1712fovzNakSOENEYs+CSkg31C9Y=",
+        "lastModified": 1737885640,
+        "narHash": "sha256-GFzPxJzTd1rPIVD4IW+GwJlyGwBDV1Tj5FLYwDQQ9sM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0c5b4ecbed5b155b705336aa96d878e55acd8685",
+        "rev": "4e96537f163fad24ed9eb317798a79afc85b51b7",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-24.05",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pkgs-unstable": {
+      "locked": {
+        "lastModified": 1737885589,
+        "narHash": "sha256-Zf0hSrtzaM1DEz8//+Xs51k/wdSajticVrATqDrfQjg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "852ff1d9e153d8875a83602e03fdef8a63f0ecf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "nixstable": "nixstable",
+        "pkgs-stable": "pkgs-stable",
+        "pkgs-unstable": "pkgs-unstable",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor"
       }
     },
     "rose-pine-hyprcursor": {
       "inputs": {
         "hyprlang": "hyprlang",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1718180692,
-        "narHash": "sha256-J5IYvKcdGRL/sBuST5WaoESEIl7KPv8aJK8aLY6C91E=",
+        "lastModified": 1733265112,
+        "narHash": "sha256-FdO+2X7TeIAW73hiyFKZbCjlAskb4xMmYYPX97mo9RE=",
         "owner": "ndom91",
         "repo": "rose-pine-hyprcursor",
-        "rev": "40ce26cb29206722ff73839ead0d871d94751e90",
+        "rev": "89dc9e347ce8da26766ad421b0899536f9f87639",
         "type": "github"
       },
       "original": {

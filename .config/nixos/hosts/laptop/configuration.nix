@@ -64,6 +64,7 @@
       alacritty
       bluez
       bluez-tools
+      discord-canary
       dunst
       firefox
       freetube
@@ -101,6 +102,9 @@
     ];
   };
 
+  # Disable root password login
+  users.users.root.hashedPassword = "!";
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -114,6 +118,7 @@
     lxqt.lxqt-policykit
     neovim
     python3
+    river-bsp-layout
     rose-pine-cursor
     unzip
     wget
@@ -187,11 +192,6 @@
     # Enable the OpenSSH daemon.
     openssh.enable = true;
 
-    ollama = {
-        enable = true; 
-        acceleration = "rocm";
-    };
-
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -203,7 +203,11 @@
     locate = {
       package = pkgs.plocate;
       enable = true;
-      localuser = null;
+    };
+
+    ollama = {
+        enable = true;
+        acceleration = false;  # No supported GPUs available on laptop
     };
 
     mullvad-vpn.enable = true;

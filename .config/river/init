@@ -162,6 +162,7 @@ exec waybar &
 exec dunst &
 exec syncthing &
 exec start-all-distroboxes &
+exec lxpolkit &
 
 # Start the layout generator
 riverctl default-layout bsp-layout
