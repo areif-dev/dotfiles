@@ -72,6 +72,7 @@
       grim
       hledger
       keepassxc
+      llama-cpp
       libreoffice-still
       localsend
       mullvad-vpn
@@ -91,7 +92,6 @@
       swayidle
       swaylock
       syncthing
-      tabby-agent
       tldr
       tor-browser
       transmission_4-gtk
@@ -214,12 +214,6 @@
     mullvad-vpn.enable = true;
 
     gnome.gnome-keyring.enable = true;
-
-    tabby = {
-      enable = true; 
-      model = "TabbyML/Qwen2.5-Coder-3B";
-      acceleration = "cpu";
-    };
 
     tailscale.enable = true;
 
