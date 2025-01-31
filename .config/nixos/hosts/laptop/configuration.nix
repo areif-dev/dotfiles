@@ -72,6 +72,7 @@
       grim
       hledger
       keepassxc
+      llama-cpp
       libreoffice-still
       localsend
       mullvad-vpn
