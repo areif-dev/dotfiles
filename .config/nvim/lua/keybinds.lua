@@ -30,7 +30,6 @@ local keybinds = {
     {"(", ":tabNext<CR>"},
     {")", ":tabnext<CR>"},
     {"<C-e>", ":sp<CR>:wincmd j<CR>:term<CR>A"},
-    {"<A-f>", ":CocCommand editor.action.formatDocument<CR>"}
   },
   t = {
     {"<ESC>", "<C-\\><C-n>"},
@@ -44,7 +43,3 @@ for mode, mode_list in pairs(keybinds) do
     map(mode, bind[1], bind[2])
   end
 end
-
--- Set the carriage return to accept the next coc completion suggestion
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-vim.keymap.set("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)

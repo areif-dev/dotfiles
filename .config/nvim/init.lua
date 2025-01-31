@@ -1,10 +1,10 @@
 require "keybinds"
 require "plugins"
 require "languages_conf"
+require "lsp"
 
 local set = vim.opt
 
-set.completeopt = 'menu,menuone,noselect'
 set.wrap = false 
 vim.cmd [[
   syntax enable
@@ -26,3 +26,8 @@ vim.cmd [[
 ]]
 
 require("catppuccin").setup()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require("lspconfig")
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities
+}

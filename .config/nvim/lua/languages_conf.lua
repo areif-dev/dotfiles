@@ -21,11 +21,6 @@ local make_web_stack_conf = function()
       set.shiftwidth = 2
     end
   })
-
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = web_stack_pattern,
-    command = ":CocCommand prettier.forceFormatDocument"
-  })
 end
 
 local make_lua_config = function()
@@ -48,11 +43,6 @@ local make_server_stack_conf = function()
       set.tabstop = 4
       set.shiftwidth = 4
     end
-  })
-
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = server_stack_pattern,
-    command = ":CocCommand editor.action.formatDocument"
   })
 end
 
