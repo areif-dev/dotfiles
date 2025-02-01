@@ -3,13 +3,20 @@
 import socket 
 import subprocess 
 import os
-
+import shutil
 
 main_mod = "Super"
 if socket.gethostname() == "laptop":
     main_mod = "ALT"
 
+full_config = f"$mainMod = {main_mod}"
+
+if shutil.which("lxqt-policykit-agent"):
+    full_config += "\nexec-once = lxqt-policykit-agent"
+elif shutil.which("lxpolkit"):
+    full_config += "\nexec-once = lxpolkit"
+
 with open(f"{os.environ['HOME']}/.config/hypr/system_specifics.conf", "w") as f:
-    f.write(f"$mainMod = {main_mod}")
-    
-subprocess.run("Hyprland")
+    f.write(f"{full_config}")
+
+subprocess.Popen("Hyprland")
