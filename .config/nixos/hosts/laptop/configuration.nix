@@ -180,14 +180,29 @@
 
   # List services that you want to enable:
   services = {
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
     # Enable network printer discovery
     avahi = {
       enable = true;
       nssmdns4 = true; 
       openFirewall = true;
+    };
+
+    dbus.enable = true;
+
+    gnome.gnome-keyring.enable = true;
+
+    gvfs.enable = true;  # Enable mounting, trash, etc for Thunar
+
+    locate = {
+      package = pkgs.plocate;
+      enable = true;
+    };
+
+    mullvad-vpn.enable = true;
+
+    ollama = {
+        enable = true;
+        acceleration = false;  # No supported GPUs available on laptop
     };
 
     # Enable the OpenSSH daemon.
@@ -199,27 +214,13 @@
       pulse.enable = true;
     }; 
 
-    dbus.enable = true;
+    ratbagd.enable = true;
 
-    locate = {
-      package = pkgs.plocate;
-      enable = true;
-    };
-
-    ollama = {
-        enable = true;
-        acceleration = false;  # No supported GPUs available on laptop
-    };
-
-    mullvad-vpn.enable = true;
-
-    gnome.gnome-keyring.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
 
     tailscale.enable = true;
 
-    ratbagd.enable = true;
-
-    gvfs.enable = true;  # Enable mounting, trash, etc for Thunar
     tumbler.enable = true;  # Thumbnail support for images 
   };
 
