@@ -122,6 +122,7 @@
     river-bsp-layout
     rose-pine-cursor
     unzip
+    virtiofsd
     wget
     zip
   ]
