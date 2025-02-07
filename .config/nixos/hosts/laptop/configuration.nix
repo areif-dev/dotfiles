@@ -190,6 +190,8 @@
 
     dbus.enable = true;
 
+    fwupd.enable = true;
+
     gnome.gnome-keyring.enable = true;
 
     gvfs.enable = true;  # Enable mounting, trash, etc for Thunar
