@@ -11,7 +11,7 @@ end
 
 if vim.fn.executable("pyright") == 1 then 
   lspconfig.pyright.setup({
-    capabilities = capabilities
+    capabilities = capabilities,
   })
 else 
   print("pyright not found")
