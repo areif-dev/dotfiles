@@ -4,7 +4,6 @@
   inputs = {
     pkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     pkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
