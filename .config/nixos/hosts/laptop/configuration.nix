@@ -81,6 +81,7 @@
       nwg-look
       papirus-icon-theme
       pavucontrol
+      phinger-cursors
       plocate
       remmina
       ripgrep
@@ -120,15 +121,10 @@
     neovim
     python3
     river-bsp-layout
-    rose-pine-cursor
     unzip
     virtiofsd
     wget
     zip
-  ]
-  ++ 
-  [
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   fonts.packages = with pkgs; [
