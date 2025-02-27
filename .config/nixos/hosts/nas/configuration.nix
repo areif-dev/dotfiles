@@ -109,16 +109,25 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.locate = {
-    package = pkgs.plocate;
-    enable = true;
-    localuser = null;
+  programs = {
+    zsh = {
+      enable = true; 
+      ohMyZsh.enable = true; 
+      autosuggestions.enable = true;
+    };
   };
 
-  services.tailscale.enable = true;
+  # Enable the OpenSSH daemon.
+  services = {
+    locate = {
+      package = pkgs.plocate;
+      enable = true;
+      localuser = null;
+    };
+
+    openssh.enable = true;
+    tailscale.enable = true;
+  };
 
   virtualisation = {
     podman = {
