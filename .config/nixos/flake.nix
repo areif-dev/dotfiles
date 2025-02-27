@@ -29,10 +29,10 @@
           ];
         };
 
-        home-nas = pkgs-stable.lib.nixosSystem {
+        nas = pkgs-stable.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./hosts/home-nas/configuration.nix
+            ./hosts/nas/configuration.nix
             # inputs.home-manager.nixosModules.default
           ];
         };

@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -20,7 +20,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "home-nas"; # Define your hostname.
+  networking.hostName = "nas"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -68,8 +68,19 @@
   users.users.aj = {
     isNormalUser = true;
     initialPassword = "changeme";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
+    packages = with pkgs; [
+      hledger
+      mullvad-vpn
+      ripgrep
+      starship
+      syncthing
+      viu
+    ];
   };
+
+  users.users.root.hashedPassword = "!";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -81,6 +92,7 @@
     killall
     libgcc
     neovim
+    plocate
     python3
     unzip
     wget
@@ -100,14 +112,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  }; 
-
-  services.dbus.enable = true;
-
   services.locate = {
     package = pkgs.plocate;
     enable = true;
@@ -121,6 +125,7 @@
       enable = true;
       defaultNetwork.settings.dns_enabled = true;
     };
+    libvirtd.enable = true;
   };
 
   # Open ports in the firewall.
