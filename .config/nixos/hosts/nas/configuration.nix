@@ -73,6 +73,7 @@
     packages = with pkgs; [
       hledger
       mullvad-vpn
+      podman-compose
       ripgrep
       starship
       syncthing
