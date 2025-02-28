@@ -99,6 +99,7 @@
     neovim
     plocate
     python3
+    rclone
     unzip
     wget
     zip
