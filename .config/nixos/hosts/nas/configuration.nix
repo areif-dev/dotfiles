@@ -120,6 +120,8 @@
       ohMyZsh.enable = true; 
       autosuggestions.enable = true;
     };
+
+    virt-manager.enable = true;
   };
 
   # Enable the OpenSSH daemon.
@@ -140,6 +142,7 @@
       defaultNetwork.settings.dns_enabled = true;
     };
     libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
   };
 
   # Open ports in the firewall.
