@@ -1,0 +1,10 @@
+[Unit]
+Description=Biweekly run to prune Sync directory backups
+
+[Timer]
+OnCalendar=*-*-01 13:00:00
+OnCalendar=*-*-15 13:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

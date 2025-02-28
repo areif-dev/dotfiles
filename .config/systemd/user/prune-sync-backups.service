@@ -1,0 +1,6 @@
+[Unit]
+Description=Removes outedated backups from the Sync directory to avoid using too much space
+After=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/home/aj/Sync/prune-backups.py

@@ -1,0 +1,6 @@
+[Unit]
+Description=Rsyncs the data from the Sync directory to a Sync/backups/<DATE>
+After=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/home/aj/Sync/backup.sh
