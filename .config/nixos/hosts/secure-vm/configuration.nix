@@ -120,6 +120,7 @@
 
   # Enable the OpenSSH daemon.
   services = {
+    displayManager.defaultSession = "xfce";
     locate = {
       package = pkgs.plocate;
       enable = true;
@@ -127,6 +128,13 @@
     };
 
     openssh.enable = true;
+    qemuGuest.enable = true;
+    spice-vdagentd.enable = true;
+
+    xserver = {
+      enable = true; 
+      desktopManager.xfce.enable = true;
+    };
   };
 
   virtualisation = {
