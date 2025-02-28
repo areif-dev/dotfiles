@@ -45,6 +45,13 @@
           ];
         };
 
+        secure-vm = pkgs-stable.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/secure-vm/configuration.nix
+          ];
+        };
+
       };
     };
 }
