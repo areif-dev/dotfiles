@@ -77,6 +77,7 @@
       mullvad-vpn
       ripgrep
       starship
+      transmission_4-gtk
       viu
     ];
   };
