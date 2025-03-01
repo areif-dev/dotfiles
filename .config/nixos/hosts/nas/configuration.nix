@@ -101,6 +101,7 @@
     python3
     rclone
     unzip
+    virtiofsd
     wget
     zip
   ];
