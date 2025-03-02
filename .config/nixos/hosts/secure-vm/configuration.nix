@@ -96,6 +96,7 @@
     plocate
     python3
     unzip
+    virtiofsd
     wget
     zip
   ];
@@ -127,6 +128,7 @@
       localuser = null;
     };
 
+    mullvad-vpn.enable = true;
     openssh.enable = true;
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
