@@ -14,11 +14,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Use the systemd-boot EFI boot loader.
   boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+    loader.grub = {
+      enable = true;
+      device = "/dev/vda";
     };
     kernelPackages = pkgs.linuxPackages_latest;
   };
