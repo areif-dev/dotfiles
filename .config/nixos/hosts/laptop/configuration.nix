@@ -75,6 +75,7 @@
       llama-cpp
       libreoffice-still
       localsend
+      mullvad-browser
       mullvad-vpn
       nodejs
       neovim
