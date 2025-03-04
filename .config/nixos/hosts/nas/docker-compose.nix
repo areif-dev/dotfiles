@@ -245,8 +245,8 @@ in
   virtualisation.oci-containers.containers."syncthing" = {
     image = "docker.io/syncthing/syncthing";
     environment = {
-      "PGID" = "1000";
-      "PUID" = "1000";
+      "PGID" = "0";
+      "PUID" = "0";
     };
     volumes = [
       "/mnt/bulk/syncthing:/var/syncthing:rw,z"
