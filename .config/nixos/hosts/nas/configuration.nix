@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./docker-compose.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -74,10 +75,10 @@
     initialPassword = "changeme";
     extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
+    linger = true;
     packages = with pkgs; [
       hledger
       mullvad-vpn
-      podman-compose
       ripgrep
       starship
       syncthing
@@ -98,6 +99,7 @@
     libgcc
     neovim
     plocate
+    podman-compose
     python3
     rclone
     unzip
@@ -139,6 +141,7 @@
   };
 
   virtualisation = {
+    containers.enable = true;
     podman = {
       enable = true;
       defaultNetwork.settings.dns_enabled = true;
@@ -177,4 +180,3 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }
-
