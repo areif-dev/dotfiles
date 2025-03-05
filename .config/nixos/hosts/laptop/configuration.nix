@@ -74,8 +74,8 @@
       keepassxc
       llama-cpp
       libreoffice-still
+      librewolf
       localsend
-      mullvad-browser
       mullvad-vpn
       nodejs
       neovim
