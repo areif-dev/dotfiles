@@ -117,6 +117,40 @@
   # };
 
   # List services that you want to enable:
+  systemd = {
+    timers = {
+      "backup" = {
+        description = "Daily backup of critical data to S3";
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnCalendar = "*-*-* 04:00:00";
+          Persistent = true;
+          Unit = "backup.service";
+        };
+      };
+    };
+
+    services = {
+      "backup" = {
+        wants = [ "network-online.target" ];
+        script = ''
+          set -eu 
+
+          ${pkgs.rclone} sync /mnt/bulk/audiobooks/ audiobooks
+          ${pkgs.rclone} sync /mnt/bulk/images/ images
+          ${pkgs.rclone} sync /mnt/bulk/music/ music
+          ${pkgs.rclone} sync /mnt/bulk/podcasts/ podcasts
+          ${pkgs.rclone} sync /mnt/bulk/postgres/ postgres
+          ${pkgs.rclone} sync /mnt/bulk/syncthing/ syncthing
+        '';
+        description = "Backup critical data from raid array to S3";
+        after = [ "network-online.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+        };
+      };
+    };
+  };
 
   programs = {
     zsh = {
