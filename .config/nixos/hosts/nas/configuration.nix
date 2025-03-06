@@ -136,12 +136,12 @@
         script = ''
           set -eu 
 
-          ${pkgs.rclone} sync /mnt/bulk/audiobooks/ audiobooks
-          ${pkgs.rclone} sync /mnt/bulk/images/ images
-          ${pkgs.rclone} sync /mnt/bulk/music/ music
-          ${pkgs.rclone} sync /mnt/bulk/podcasts/ podcasts
-          ${pkgs.rclone} sync /mnt/bulk/postgres/ postgres
-          ${pkgs.rclone} sync /mnt/bulk/syncthing/ syncthing
+          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/audiobooks/ remote:areif-dev-nas-backup/audiobooks
+          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/images/ remote:areif-dev-nas-backup/images 
+          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/music/ remote:areif-dev-nas-backup/music 
+          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/podcasts/ remote:areif-dev-nas-backup/podcasts 
+          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/postgres/ remote:areif-dev-nas-backup/postgres 
+          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/syncthing/ remote:areif-dev-nas-backup/syncthing 
         '';
         description = "Backup critical data from raid array to S3";
         after = [ "network-online.target" ];
