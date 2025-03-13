@@ -271,6 +271,32 @@ in
       "podman-compose-services-root.target"
     ];
   };
+  virtualisation.oci-containers.containers."navidrome" = {
+    image = "docker.io/deluan/navidrome:latest";
+    ports = [ "4533:4533" ];
+    volumes = [
+      "/home/aj/.config/navidrome:/data"
+      "/mnt/bulk/music:/music:ro,z"
+    ];
+    log-driver = "journald";
+  };
+  systemd.services."podman-navidrome" = {
+    serviceConfig = {
+      Restart = lib.mkOverride 90 "always";
+    };
+    after = [
+      "podman-network-services_default.service"
+    ];
+    requires = [
+      "podman-network-services_default.service"
+    ];
+    partOf = [
+      "podman-compose-services-root.target"
+    ];
+    wantedBy = [
+      "podman-compose-services-root.target"
+    ];
+  };
 
   # Networks
   systemd.services."podman-network-services_default" = {
