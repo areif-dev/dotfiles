@@ -15,6 +15,7 @@ elif command -v nano &> /dev/null; then
 fi
 
 export LEDGER_FILE="$HOME/Sync/2024.journal"
+export GOPATH=$HOME/projects/go
 
 DISABLE_AUTO_UPDATE=true
 
