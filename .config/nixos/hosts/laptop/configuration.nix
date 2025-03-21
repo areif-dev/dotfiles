@@ -102,6 +102,7 @@
       webcord
       wl-clipboard
       wlr-randr
+      youtube-music
     ];
   };
 
