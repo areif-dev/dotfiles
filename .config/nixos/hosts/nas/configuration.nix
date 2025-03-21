@@ -92,6 +92,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     bc
+    beets 
     gcc
     git
     htop
@@ -105,6 +106,7 @@
     unzip
     virtiofsd
     wget
+    yt-dlp
     zip
   ];
 
