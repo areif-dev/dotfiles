@@ -143,7 +143,13 @@
           ${pkgs.rclone}/bin/rclone sync /mnt/bulk/music/ remote:areif-dev-nas-backup/music 
           ${pkgs.rclone}/bin/rclone sync /mnt/bulk/podcasts/ remote:areif-dev-nas-backup/podcasts 
           ${pkgs.rclone}/bin/rclone sync /mnt/bulk/postgres/ remote:areif-dev-nas-backup/postgres 
-          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/syncthing/ remote:areif-dev-nas-backup/syncthing 
+          ${pkgs.rclone}/bin/rclone sync /mnt/bulk/syncthing/ remote:areif-dev-nas-backup/syncthing --exclude *.kdbx
+          ${pkgs.rclone}/bin/rclone sync /home/aj/.config/postgres remote:areif-dev-nas-backup/.config/postgres
+          ${pkgs.rclone}/bin/rclone sync /home/aj/.config/jellyfin remote:areif-dev-nas-backup/.config/jellyfin
+          ${pkgs.rclone}/bin/rclone sync /home/aj/.config/navidrome remote:areif-dev-nas-backup/.config/navidrome
+          ${pkgs.rclone}/bin/rclone sync /home/aj/.config/audiobookshelf remote:areif-dev-nas-backup/.config/audiobookshelf
+          ${pkgs.rclone}/bin/rclone sync /home/aj/.cache/audiobookshelf remote:areif-dev-nas-backup/.cache/audiobookshelf
+          ${pkgs.rclone}/bin/rclone sync /home/aj/.cache/jellyfin remote:areif-dev-nas-backup/.cache/jellyfin
         '';
         description = "Backup critical data from raid array to S3";
         after = [ "network-online.target" ];
