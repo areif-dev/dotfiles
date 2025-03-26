@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "aj";
@@ -17,7 +18,8 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    discord-canary
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -77,6 +79,9 @@
     vscode = {
       enable = true; 
       package = pkgs.vscodium; 
+      profiles.default.extensions = with pkgs.vscode-extensions; [
+        golang.go
+      ];
     };
   };
 }
