@@ -78,9 +78,23 @@
     vscode = {
       enable = true; 
       package = pkgs.vscodium; 
-      profiles.default.extensions = with pkgs.vscode-extensions; [
-        golang.go
-      ];
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          golang.go 
+          ms-python.python 
+          rust-lang.rust-analyzer
+          vscodevim.vim
+        ];
+        userSettings = {
+          "files.associations": {
+            "*.gohtml" = "html";
+          };
+          "editor.linkedEditing" = true;
+          "html.autoClosingTags" = true;
+          "javascript.autoClosingTags" = true;
+          "typescript.autoClosingTags" = true;
+        };
+      };
     };
   };
 }
