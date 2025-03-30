@@ -109,13 +109,30 @@ local packages = {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python" },
+        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python", "go", "gomod", "gowork" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
+        autotag = { enable = true },
       })
     end
-  }
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter", 
+    },
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup({
+        opts = {
+          enable_close = true, 
+          enable_rename = true, 
+          enable_close_on_slash = true,
+        },
+      })
+    end,
+  },
 }
 
 require("lazy").setup(packages)
