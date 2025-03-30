@@ -101,6 +101,7 @@
             "editor.defaultFormatter" = "vscode.html-language-features";
           };
           "editor.linkedEditing" = true;
+          "editor.rulers" = [ 80 120 ];
           "editor.formatOnSave" = true;
           "html.autoClosingTags" = true;
           "javascript.autoClosingTags" = true;
