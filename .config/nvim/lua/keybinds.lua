@@ -4,16 +4,6 @@ end
 
 local keybinds = {
   i = {
-    {'"', '""<left>'},
-    {"'", "''<left>"},
-    {"`", "``<left>"},
-    {"(", "()<left>"},
-    {"(<CR>)", "(<CR>)<ESC>O"},
-    {"[", "[]<left>"},
-    {"[<CR>", "[<CR>]<ESC>O"},
-    {"{", "{}<left>"},
-    {"{<CR>", "{<CR>}<ESC>O"},
-    {"{;<CR>}", "{<CR>};<ESC>O"},
     {"<C-s>", "<ESC>:w<CR>"},
     {"<C-t>", "<ESC>:tabnew<CR>"},
     {"<C-w>", "<ESC>:q<CR>"},

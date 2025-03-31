@@ -1,16 +1,5 @@
 local set = vim.opt
 
-local make_html_conf = function()
-  local html_pattern = {"*.html", "*.django", "*.jango", "*.hbs", "*.gohtml"}
-  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, 
-    {
-      pattern = html_pattern,
-      callback = function()
-        vim.bo.filetype = "htmldjango"
-      end
-    })
-end
-
 local make_web_stack_conf = function()
   local web_stack_pattern = {"*.html", "*.django", "*.jango", "*.hbs", "*.css", "*.js", "*.jsx", "*.json", "*.ts", "*.tsx", "*.gohtml"}
   vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"},
@@ -46,7 +35,6 @@ local make_server_stack_conf = function()
   })
 end
 
-make_html_conf()
 make_web_stack_conf()
 make_lua_config()
 make_server_stack_conf()

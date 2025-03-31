@@ -103,6 +103,20 @@ local packages = {
     end,
   },
   {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup()
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter", 
     build = ":TSUpdate",
     config = function()
@@ -113,25 +127,9 @@ local packages = {
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
-        autotag = { enable = true },
+        autotag = { enbale = true },
       })
     end
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter", 
-    },
-    event = "InsertEnter",
-    config = function()
-      require("nvim-ts-autotag").setup({
-        opts = {
-          enable_close = true, 
-          enable_rename = true, 
-          enable_close_on_slash = true,
-        },
-      })
-    end,
   },
 }
 
