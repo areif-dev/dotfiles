@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ~/.config/nixos/home-manager/vscode.nix
+  ];
+
   nixpkgs.config.allowUnfree = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -76,12 +80,5 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    vscode = {
-      enable = true; 
-      package = pkgs.vscodium; 
-      profiles.default.extensions = with pkgs.vscode-extensions; [
-        golang.go
-      ];
-    };
   };
 }
