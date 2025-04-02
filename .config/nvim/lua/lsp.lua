@@ -7,6 +7,12 @@ if vim.fn.executable("vscode-html-language-server") == 1 then
   }
 end
 
+if vim.fn.executable("vscode-css-language-server") == 1 then 
+  lspconfig.cssls.setup {
+    capabilities = capabilities
+  }
+end
+
 if vim.fn.executable("rust-analyzer") == 1 then
   lspconfig.rust_analyzer.setup({
     capabilities = capabilities
