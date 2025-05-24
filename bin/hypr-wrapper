@@ -6,10 +6,14 @@ import os
 import shutil
 
 main_mod = "Super"
+
+# Monitors are set as $name, $widthx$height@$hertz, $leftx$top, $scale
+monitors = "monitor=DP-1,2560x1440@170.020996,0x0,1\nmonitor=HDMI-A-1,1920x1080@60,-1920x0,1.25"
 if socket.gethostname() == "laptop":
     main_mod = "ALT"
+    monitors = "monitor=eDP-1,1920x1200@60,0x0,1"
 
-full_config = f"$mainMod = {main_mod}"
+full_config = f"$mainMod = {main_mod}\n{monitors}"
 
 if shutil.which("lxqt-policykit-agent"):
     full_config += "\nexec-once = lxqt-policykit-agent"

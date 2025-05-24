@@ -14,11 +14,7 @@
 
     // Modules configuration
 
-    "hyprland/workspaces": {
-        "persistent-workspaces": {
-            "*": 5,
-        }
-    },
+    "hyprland/workspaces": {},
     "river/tags": {
         "num-tags": 5,
     },
