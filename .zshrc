@@ -23,6 +23,11 @@ ZSH_THEME="alanpeabody"
 if [ $(hostname) = "desktop" ]; then
     source $ZSH/oh-my-zsh.sh
     source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ $(hostname) = "laptop" ]; then 
+    plugins=(
+        zsh-autosuggestions
+    )
+    source $ZSH/oh-my-zsh.sh 
 fi
 
 alias la="ls -a"
