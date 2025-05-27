@@ -9,11 +9,31 @@ main_mod = "Super"
 
 # Monitors are set as $name, $widthx$height@$hertz, $leftx$top, $scale
 monitors = "monitor=DP-1,2560x1440@170.020996,0x0,1\nmonitor=HDMI-A-1,1920x1080@60,-1920x0,1.25"
+workspaces = """
+workspace = 1,persistent:true,monitor:DP-1
+workspace = 2,persistent:true,monitor:DP-1
+workspace = 3,persistent:true,monitor:DP-1
+workspace = 4,persistent:true,monitor:DP-1
+workspace = 5,persistent:true,monitor:DP-1
+workspace = 6,persistent:true,monitor:HDMI-A-1
+workspace = 7,persistent:true,monitor:HDMI-A-1
+workspace = 8,persistent:true,monitor:HDMI-A-1
+workspace = 9,persistent:true,monitor:HDMI-A-1
+workspace = 10,persistent:true,monitor:HDMI-A-1
+"""
+
 if socket.gethostname() == "laptop":
     main_mod = "ALT"
     monitors = "monitor=eDP-1,1920x1200@60,0x0,1"
+    workspaces = """
+workspace = 1,persistent:true,monitor:eDP-1
+workspace = 2,persistent:true,monitor:eDP-1
+workspace = 3,persistent:true,monitor:eDP-1
+workspace = 4,persistent:true,monitor:eDP-1
+workspace = 5,persistent:true,monitor:eDP-1
+"""
 
-full_config = f"$mainMod = {main_mod}\n{monitors}"
+full_config = f"$mainMod = {main_mod}\n{monitors}\n{workspaces}"
 
 if shutil.which("lxqt-policykit-agent"):
     full_config += "\nexec-once = lxqt-policykit-agent"
