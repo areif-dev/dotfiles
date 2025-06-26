@@ -19,7 +19,7 @@ if vim.fn.executable("rust-analyzer") == 1 then
   })
 end
 
-if vim.fn.executable("tsserver") == 1 then 
+if vim.fn.executable("typescript-language-server") == 1 then 
   lspconfig.ts_ls.setup({
     capabilities = capabilities,
   })
