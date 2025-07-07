@@ -175,7 +175,6 @@
     locate = {
       package = pkgs.plocate;
       enable = true;
-      localuser = null;
     };
 
     openssh.enable = true;
