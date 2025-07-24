@@ -45,3 +45,6 @@ home_dir=$(distrobox enter "$checked_container_name" -- printenv HOME 2> /dev/nu
 distrobox stop --yes "$checked_container_name"
 printf 'y\n' | distrobox rm "$checked_container_name"
 distrobox create --image "$image_name" --name "$checked_container_name" --home "$home_dir" --pull
+
+distrobox enter "$checked_container_name" -- command -v export-apps && \
+    distrobox enter "$checked_container_name" -- export-apps
