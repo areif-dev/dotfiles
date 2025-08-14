@@ -23,7 +23,7 @@ ZSH_THEME="alanpeabody"
 if grep -q "Red Hat" /proc/version; then
     source $ZSH/oh-my-zsh.sh
     source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-elif grep -q openSUSE /proc/version; then 
+elif grep -q openSUSE /proc/version || grep -q Debian /proc/version; then 
     plugins=(
         zsh-autosuggestions
     )
