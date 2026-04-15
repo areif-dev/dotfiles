@@ -103,6 +103,7 @@
     podman-compose
     python3
     rclone
+    smartmontools
     unzip
     virtiofsd
     wget
