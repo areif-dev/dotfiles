@@ -120,7 +120,7 @@ local packages = {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python", "go", "gomod", "gowork" },
+        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python", "go", "gomod", "gowork", "htmldjango" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
