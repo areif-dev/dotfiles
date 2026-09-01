@@ -86,7 +86,7 @@
       plocate
       remmina
       ripgrep
-      rofi-wayland
+      rofi
       rustup
       starship
       steam-run
