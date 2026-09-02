@@ -40,19 +40,9 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aj = {
@@ -65,7 +55,6 @@
       bluez
       bluez-tools
       discord-canary
-      dunst
       firefox
       freetube
       gimp
@@ -77,13 +66,11 @@
       mullvad-vpn
       nodejs
       neovim
-      nwg-look
       papirus-icon-theme
       pavucontrol
       plocate
       remmina
       ripgrep
-      rofi
       rustup
       starship
       steam-run
@@ -115,11 +102,9 @@
     htop
     killall
     libgcc
-    lxqt.lxqt-policykit
     neovim
     phinger-cursors
     python3
-    river-bsp-layout
     unzip
     virtiofsd
     wget
@@ -135,21 +120,9 @@
     font-awesome
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   hardware.bluetooth.enable = true;
 
   programs = {
-    river.enable = true;
-    hyprland.enable = true;
-    waybar.enable = true;
-
     zsh = {
       enable = true;
       ohMyZsh.enable = true; 
@@ -163,17 +136,7 @@
       gamescopeSession.enable = true;
     };
 
-    thunar = {
-      enable = true; 
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin 
-        thunar-volman
-      ];
-    };
-
     thunderbird.enable = true;
-
-    xfconf.enable = true; 
 
     virt-manager.enable = true;
   };
@@ -189,11 +152,11 @@
 
     dbus.enable = true;
 
+    desktopManager.plasma6.enable = true;
+
+    displayManager.plasma-login-manager.enable = true;
+
     fwupd.enable = true;
-
-    gnome.gnome-keyring.enable = true;
-
-    gvfs.enable = true;  # Enable mounting, trash, etc for Thunar
 
     locate = {
       package = pkgs.plocate;
@@ -217,8 +180,6 @@
     printing.enable = true;
 
     tailscale.enable = true;
-
-    tumbler.enable = true;  # Thumbnail support for images 
   };
 
   xdg.portal = {
