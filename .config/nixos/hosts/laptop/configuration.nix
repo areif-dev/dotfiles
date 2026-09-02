@@ -74,15 +74,12 @@
       keepassxc
       llama-cpp
       libreoffice-still
-      librewolf
-      localsend
       mullvad-vpn
       nodejs
       neovim
       nwg-look
       papirus-icon-theme
       pavucontrol
-      phinger-cursors
       plocate
       remmina
       ripgrep
@@ -102,7 +99,6 @@
       webcord
       wl-clipboard
       wlr-randr
-      youtube-music
     ];
   };
 
@@ -121,6 +117,7 @@
     libgcc
     lxqt.lxqt-policykit
     neovim
+    phinger-cursors
     python3
     river-bsp-layout
     unzip
@@ -204,11 +201,6 @@
     };
 
     mullvad-vpn.enable = true;
-
-    ollama = {
-        enable = true;
-        acceleration = false;  # No supported GPUs available on laptop
-    };
 
     # Enable the OpenSSH daemon.
     openssh.enable = true;
