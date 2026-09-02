@@ -52,6 +52,7 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       alacritty
+      antigravity-cli
       bluez
       bluez-tools
       discord-canary
