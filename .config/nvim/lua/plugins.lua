@@ -22,8 +22,8 @@ local packages = {
     lazy = false, 
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme catppuccin]])
       vim.g.catppuccin_flavour = "mocha"
+      vim.cmd([[colorscheme catppuccin]])
     end,
   },
 
