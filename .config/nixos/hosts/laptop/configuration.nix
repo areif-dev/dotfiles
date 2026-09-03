@@ -65,6 +65,8 @@
       llama-cpp
       libreoffice-still
       mullvad-vpn
+      nil
+      nixfmt
       nodejs
       neovim
       papirus-icon-theme

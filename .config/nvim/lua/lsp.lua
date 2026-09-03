@@ -58,3 +58,17 @@ end
 if vim.fn.executable("gopls") == 1 then 
   vim.lsp.enable("gopls")
 end
+
+if vim.fn.executable("nil") == 1 then
+  vim.lsp.config("nil_ls", {
+    settings = {
+      ["nil"] = {
+        formatting = {
+          command = { "nixfmt" },
+        },
+      },
+    },
+  })
+  vim.lsp.enable("nil_ls")
+end
+

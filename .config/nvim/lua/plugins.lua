@@ -133,6 +133,7 @@ local packages = {
         blade = { "prettier" },
         eruby = { "prettier" },
         php = { "prettier" },
+        nix = { "nixfmt" },
       },
       format_on_save = {
         timeout_ms = 1000,
@@ -210,7 +211,7 @@ local packages = {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python", "go", "gomod", "gowork", "htmldjango" },
+        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python", "go", "gomod", "gowork", "htmldjango", "nix" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
