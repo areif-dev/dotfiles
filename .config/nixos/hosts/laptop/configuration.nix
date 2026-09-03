@@ -2,15 +2,24 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"  ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -23,7 +32,7 @@
   networking.hostName = "laptop"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "US/Eastern";
@@ -48,7 +57,10 @@
   users.users.aj = {
     isNormalUser = true;
     initialPassword = "changeme";
-    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "libvirtd"
+    ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       alacritty
@@ -128,7 +140,7 @@
   programs = {
     zsh = {
       enable = true;
-      ohMyZsh.enable = true; 
+      ohMyZsh.enable = true;
       autosuggestions.enable = true;
     };
 
@@ -149,7 +161,7 @@
     # Enable network printer discovery
     avahi = {
       enable = true;
-      nssmdns4 = true; 
+      nssmdns4 = true;
       openFirewall = true;
     };
 
@@ -175,7 +187,7 @@
       enable = true;
       alsa.enable = true;
       pulse.enable = true;
-    }; 
+    };
 
     ratbagd.enable = true;
 
@@ -229,4 +241,3 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }
-
