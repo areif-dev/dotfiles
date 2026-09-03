@@ -120,6 +120,7 @@
     neovim
     phinger-cursors
     python3
+    tmux
     unzip
     virtiofsd
     wget
