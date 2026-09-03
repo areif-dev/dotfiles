@@ -3,6 +3,17 @@
   programs.plasma = {
     overrideConfig = true;
     enable = true;
+    panels = [
+      {
+        location = "top";
+        height = 22;
+        floating = true;
+        hiding = "none";
+      }
+    ];
+    workspace = {
+      lookAndFeel = "org.kde.breezedark.desktop";
+    };
     kwin.scripts.polonium = {
       enable = true;
       settings = {
