@@ -329,6 +329,7 @@
       kcminputrc.Mouse.cursorTheme = "phinger-cursors-dark";
       kded5rc.Module-device_automounter.autoload = false;
       kdeglobals.Icons.Theme = "Papirus-Dark";
+      kdeglobals.KDE.AnimationDurationFactor = 0;
       kdeglobals.KDE.contrast = 4;
       kdeglobals.KDE.frameContrast = 0.2;
       kdeglobals.WM.activeBackground = "39,44,49";
