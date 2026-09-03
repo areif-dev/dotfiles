@@ -25,6 +25,19 @@ vim.filetype.add({
   },
 })
 
+local make_nix_conf = function() 
+  local nix_pattern = {"*.nix"}
+  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"},
+    {
+      pattern = nix_pattern,
+      callback = function()
+        set.tabstop = 2 
+        set.shiftwidth = 2
+      end
+    }
+  )
+end
+
 local make_web_stack_conf = function()
   local web_stack_pattern = {"*.html", "*.django", "*.jango", "*.hbs", "*.css", "*.js", "*.jsx", "*.json", "*.ts", "*.tsx", "*.gohtml", "*.liquid"}
   vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"},
@@ -63,3 +76,4 @@ end
 make_web_stack_conf()
 make_lua_config()
 make_server_stack_conf()
+make_nix_conf()
