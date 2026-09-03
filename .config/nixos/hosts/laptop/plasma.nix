@@ -89,7 +89,7 @@
       kwin.PoloniumSetEnginePillars = [ ];
       kwin.PoloniumSetEngineThreeColumn = [ ];
       kwin.PoloniumToggleActiveTiling = "Meta+Shift+Space";
-      kwin.PoloniumToggleSettingsMenu = "Meta+\\\\\\, ";
+      kwin.PoloniumToggleSettingsMenu = "Meta+\\\\,none";
       kwin."Setup Window Shortcut" = [ ];
       kwin."Show Desktop" = "Meta+D";
       kwin."Switch One Desktop Down" = "Meta+Ctrl+Down";
@@ -326,8 +326,9 @@
       kcminputrc."Libinput/1267/12780/ELAN07A8:00 04F3:31EC Touchpad".Enabled = true;
       kcminputrc."Libinput/1267/12780/ELAN07A8:00 04F3:31EC Touchpad".NaturalScroll = true;
       kcminputrc.Mouse.cursorSize = 24;
+      kcminputrc.Mouse.cursorTheme = "phinger-cursors-dark";
       kded5rc.Module-device_automounter.autoload = false;
-      kdeglobals.KDE.AnimationDurationFactor = 0;
+      kdeglobals.Icons.Theme = "Papirus-Dark";
       kdeglobals.KDE.contrast = 4;
       kdeglobals.KDE.frameContrast = 0.2;
       kdeglobals.WM.activeBackground = "39,44,49";
@@ -385,6 +386,7 @@
       kwinrc.Windows.FocusPolicy = "FocusFollowsMouse";
       kwinrc.Windows.PerOutputVirtualDesktops = true;
       kwinrc.Xwayland.Scale = 1;
+      kwinrc."org.kde.kdecoration2".theme = "Breeze Dark";
       kwinrulesrc.General.rules = "";
       plasma-localerc.Formats.LANG = "en_US.UTF-8";
       spectaclerc.ImageSave.translatedScreenshotsFolder = "Screenshots";
