@@ -386,7 +386,7 @@
       kwinrc.Windows.FocusPolicy = "FocusFollowsMouse";
       kwinrc.Windows.PerOutputVirtualDesktops = true;
       kwinrc.Xwayland.Scale = 1;
-      kwinrc."org.kde.kdecoration2".theme = "Breeze";
+      kwinrc."org.kde.kdecoration2".theme = "Breeze Dark";
       kwinrulesrc.General.rules = "";
       plasma-localerc.Formats.LANG = "en_US.UTF-8";
       spectaclerc.ImageSave.translatedScreenshotsFolder = "Screenshots";
