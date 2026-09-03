@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs.plasma = {
+    overrideConfig = true;
     enable = true;
     kwin.scripts.polonium = {
       enable = true;
