@@ -69,6 +69,27 @@
       kwin.MoveZoomRight = [ ];
       kwin.MoveZoomUp = [ ];
       kwin.Overview = "Meta+W";
+      kwin.PoloniumActivateAbove = "Alt+K";
+      kwin.PoloniumActivateBelow = "Alt+J";
+      kwin.PoloniumActivateLeft = "Alt+H";
+      kwin.PoloniumActivateRight = "Alt+L";
+      kwin.PoloniumCycleEngine = "Meta+|";
+      kwin.PoloniumPlaceAbove = "Meta+Shift+K";
+      kwin.PoloniumPlaceBelow = "Meta+Shift+J";
+      kwin.PoloniumPlaceLeft = "Meta+Shift+H";
+      kwin.PoloniumPlaceRight = "Meta+Shift+L";
+      kwin.PoloniumResizeDown = "Meta+Ctrl+J";
+      kwin.PoloniumResizeLeft = "Meta+Ctrl+H";
+      kwin.PoloniumResizeRight = "Meta+Ctrl+L";
+      kwin.PoloniumResizeUp = "Meta+Ctrl+K";
+      kwin.PoloniumSetEngineBTree = [ ];
+      kwin.PoloniumSetEngineHalf = [ ];
+      kwin.PoloniumSetEngineKWin = [ ];
+      kwin.PoloniumSetEnginePager = [ ];
+      kwin.PoloniumSetEnginePillars = [ ];
+      kwin.PoloniumSetEngineThreeColumn = [ ];
+      kwin.PoloniumToggleActiveTiling = "Meta+Shift+Space";
+      kwin.PoloniumToggleSettingsMenu = "Meta+\\\\,none";
       kwin."Setup Window Shortcut" = [ ];
       kwin."Show Desktop" = "Meta+D";
       kwin."Switch One Desktop Down" = "Meta+Ctrl+Down";
@@ -333,10 +354,14 @@
       kwinrc.Desktops.Name_5 = 5;
       kwinrc.Desktops.Number = 5;
       kwinrc.Desktops.Rows = 1;
+      kwinrc.Plugins.poloniumEnabled = true;
+      kwinrc.Script-polonium.Borders = 2;
+      kwinrc.Script-polonium.EngineType = 0;
+      kwinrc.Script-polonium.MaximizeSingle = true;
       kwinrc."Tiling/32237f0e-10e5-45f0-a315-22f31e01036d/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".padding =
         4;
       kwinrc."Tiling/32237f0e-10e5-45f0-a315-22f31e01036d/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".tiles =
-        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[]}";
       kwinrc."Tiling/551443ec-caea-4450-8e0c-d93c30c454c3/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".padding =
         4;
       kwinrc."Tiling/551443ec-caea-4450-8e0c-d93c30c454c3/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".tiles =
@@ -344,19 +369,19 @@
       kwinrc."Tiling/7e869149-ea24-487b-860b-c529508039d1/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".padding =
         4;
       kwinrc."Tiling/7e869149-ea24-487b-860b-c529508039d1/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".tiles =
-        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[]}";
       kwinrc."Tiling/81cb106c-3902-4a46-83d4-afd31972f204/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".padding =
         4;
       kwinrc."Tiling/81cb106c-3902-4a46-83d4-afd31972f204/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".tiles =
-        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"layoutDirection\":\"vertical\",\"tiles\":[{\"height\":0.5},{\"height\":0.5}],\"width\":0.5},{\"width\":0.5}]}";
       kwinrc."Tiling/d513fc61-cb90-4ac1-947c-c4dce1bd5804/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".padding =
         4;
       kwinrc."Tiling/d513fc61-cb90-4ac1-947c-c4dce1bd5804/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".tiles =
-        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[]}";
       kwinrc."Tiling/fbdea03c-6572-4fed-823d-0e04a72b6653/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".padding =
         4;
       kwinrc."Tiling/fbdea03c-6572-4fed-823d-0e04a72b6653/eb67f5ed-491f-44dc-a2f2-fae0c60a6df0".tiles =
-        "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
+        "{\"layoutDirection\":\"horizontal\",\"tiles\":[]}";
       kwinrc.Windows.DelayFocusInterval = 0;
       kwinrc.Windows.FocusPolicy = "FocusFollowsMouse";
       kwinrc.Windows.PerOutputVirtualDesktops = true;
