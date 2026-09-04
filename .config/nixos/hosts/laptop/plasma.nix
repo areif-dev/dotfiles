@@ -30,6 +30,16 @@
         maximizeSingleWindow = true;
       };
     };
+
+    startup.startupScript."start_apps" = {
+      text = ''
+        syncthing &
+        thunderbird &
+        keepassxc &
+      '';
+      priority = 2;
+    };
+
     shortcuts = {
       ActivityManager.switch-to-activity-08633b98-a783-47e0-ad36-4919228cc9f8 = [ ];
       "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = "Meta+Alt+L";
