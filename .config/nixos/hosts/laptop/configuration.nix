@@ -67,6 +67,7 @@
       antigravity-cli
       bluez
       bluez-tools
+      chromium
       discord-canary
       firefox
       freetube
