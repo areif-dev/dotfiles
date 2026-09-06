@@ -348,6 +348,8 @@
       ];
     };
     configFile = {
+      kdeglobals.General.BrowserApplication = "firefox.desktop";
+
       baloofilerc.General.dbVersion = 2;
       kactivitymanagerdrc.activities."08633b98-a783-47e0-ad36-4919228cc9f8" = "Default";
       kcminputrc.Keyboard.RepeatDelay = 500;

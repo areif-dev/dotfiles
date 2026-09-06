@@ -76,7 +76,7 @@
       hledger
       keepassxc
       llama-cpp
-      libreoffice-still
+      libreoffice-stable
       mullvad-vpn
       nil
       nixfmt
@@ -88,6 +88,7 @@
       remmina
       ripgrep
       rustup
+      spotify
       starship
       steam-run
       swaybg
