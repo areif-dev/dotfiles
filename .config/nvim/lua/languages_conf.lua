@@ -73,7 +73,20 @@ local make_server_stack_conf = function()
   })
 end
 
+local make_markdown_conf = function()
+  local markdown_pattern = {"*.md"}
+  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"},
+  {
+    pattern = markdown_pattern,
+    callback = function()
+      set.textwidth = 80
+      set.wrap = true
+    end
+  })
+end
+
 make_web_stack_conf()
 make_lua_config()
 make_server_stack_conf()
 make_nix_conf()
+make_markdown_conf()
