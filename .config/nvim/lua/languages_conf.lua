@@ -79,8 +79,11 @@ local make_markdown_conf = function()
   {
     pattern = markdown_pattern,
     callback = function()
-      set.textwidth = 80
-      set.wrap = true
+      set.textwidth = 0
+      set.wrapmargin = 0 
+      set.wrap = true 
+      set.linebreak = true 
+      set.columns = 80
     end
   })
 end
