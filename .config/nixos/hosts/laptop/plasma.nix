@@ -13,6 +13,7 @@
     ];
 
     workspace = {
+      colorScheme = "BreezeDark b4befe";
       cursor = {
         theme = "phinger-cursors-dark";
         size = 24;
