@@ -193,7 +193,13 @@
 
     ratbagd.enable = true;
 
-    syncthing.enable = true;
+    syncthing = {
+      enable = true;
+      user = "aj";
+      group = "users";
+      dataDir = "/home/aj";
+      configDir = "/home/aj/.config/syncthing";
+    };
 
     # Enable CUPS to print documents.
     printing.enable = true;
