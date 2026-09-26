@@ -94,7 +94,6 @@
       swaybg
       swayidle
       swaylock
-      syncthing
       tldr
       tor-browser
       transmission_4-gtk
@@ -193,6 +192,8 @@
     };
 
     ratbagd.enable = true;
+
+    syncthing.enable = true;
 
     # Enable CUPS to print documents.
     printing.enable = true;
