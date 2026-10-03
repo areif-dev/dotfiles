@@ -22,13 +22,31 @@
       pkgs = pkgs-unstable.legacyPackages.${system};
     in
     {
-    
       nixosConfigurations = {
+        desktop = pkgs-unstable.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [ 
+            ./modules/workstation-common.nix
+            ./hosts/desktop/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true; 
+              home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.aj = import ./hosts/desktop/home.nix;
+            }
+          ];
+        };
+
         laptop = pkgs-unstable.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
           };
           modules = [ 
+            ./modules/workstation-common.nix
             ./hosts/laptop/configuration.nix
             home-manager.nixosModules.home-manager
             {

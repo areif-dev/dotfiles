@@ -18,12 +18,9 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "laptop"; # Define your hostname.
-
-  hardware.bluetooth.enable = true;
+  networking.hostName = "desktop"; # Define your hostname.
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 1234 ];
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
