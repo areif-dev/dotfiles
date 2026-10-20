@@ -56,7 +56,7 @@
       bluez
       bluez-tools
       chromium
-      discord-canary
+      discord
       firefox
       freetube
       gimp
@@ -75,6 +75,8 @@
       plocate
       remmina
       ripgrep
+      river-bsp-layout
+      rofi
       rustup
       spotify
       starship
@@ -106,6 +108,7 @@
     neovim
     phinger-cursors
     python3
+    slurp
     tmux
     unzip
     virtiofsd
@@ -141,6 +144,8 @@
     virt-manager.enable = true;
   };
 
+  security.rtkit.enable = true;
+
   # List services that you want to enable:
   services = {
     # Enable network printer discovery
@@ -172,6 +177,8 @@
       enable = true;
       alsa.enable = true;
       pulse.enable = true;
+      jack.enable = true;
+      wireplumber.enable = true;
     };
 
     ratbagd.enable = true;
@@ -191,8 +198,22 @@
   };
 
   xdg.portal = {
+    config = {
+      common = {
+        default = [
+          "wlr"
+          "gtk"
+        ];
+      };
+    };
     enable = true;
-    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    wlr = {
+      enable = true;
+      settings.screencast = {
+        chooser_type = "default";
+      };
+    };
   };
 
   virtualisation = {

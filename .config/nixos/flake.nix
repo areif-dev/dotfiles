@@ -16,7 +16,15 @@
     };
   };
 
-  outputs = { self, pkgs-unstable, pkgs-stable, home-manager, plasma-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      pkgs-unstable,
+      pkgs-stable,
+      home-manager,
+      plasma-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = pkgs-unstable.legacyPackages.${system};
@@ -27,14 +35,14 @@
           specialArgs = {
             inherit inputs;
           };
-          modules = [ 
+          modules = [
             ./modules/workstation-common.nix
             ./hosts/desktop/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true; 
-              home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+              home-manager.useUserPackages = true;
+              # home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.aj = import ./hosts/desktop/home.nix;
             }
@@ -45,13 +53,13 @@
           specialArgs = {
             inherit inputs;
           };
-          modules = [ 
+          modules = [
             ./modules/workstation-common.nix
             ./hosts/laptop/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true; 
+              home-manager.useUserPackages = true;
               home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.aj = import ./hosts/laptop/home.nix;
@@ -60,21 +68,21 @@
         };
 
         nas = pkgs-stable.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [ 
+          specialArgs = { inherit inputs; };
+          modules = [
             ./hosts/nas/configuration.nix
           ];
         };
 
         remote = pkgs-stable.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [ 
+          specialArgs = { inherit inputs; };
+          modules = [
             ./hosts/remote/configuration.nix
           ];
         };
 
         secure-vm = pkgs-stable.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/secure-vm/configuration.nix
           ];

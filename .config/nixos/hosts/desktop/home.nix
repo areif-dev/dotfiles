@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./plasma.nix
-  ];
+  # imports = [
+  #   ./plasma.nix
+  # ];
 
   home.username = "aj";
   home.homeDirectory = "/home/aj";
