@@ -86,6 +86,7 @@
       swaylock
       tldr
       tor-browser
+      vesktop
       viu
       vlc
       wl-clipboard
@@ -157,10 +158,6 @@
 
     dbus.enable = true;
 
-    desktopManager.plasma6.enable = true;
-
-    displayManager.plasma-login-manager.enable = true;
-
     fwupd.enable = true;
 
     locate = {
@@ -198,20 +195,23 @@
   };
 
   xdg.portal = {
-    config = {
-      common = {
-        default = [
-          "wlr"
-          "gtk"
-        ];
-      };
-    };
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+      river = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+      };
+    };
     wlr = {
       enable = true;
       settings.screencast = {
-        chooser_type = "default";
+        chooser_type = "simple";
+        chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
       };
     };
   };

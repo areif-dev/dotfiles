@@ -4,6 +4,8 @@ export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.local/share:$HOME/.cargo/bin:$HOME
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export XDG_CURRENT_DESKTOP=river
+
 if command -v nvim &> /dev/null; then
     export EDITOR="nvim"
 elif command -v vim &> /dev/null; then

@@ -11,6 +11,10 @@
 # Config by AJ Reifsnyder
 
 export RIVER_DIR=$HOME/.config/river
+export XDG_CURRENT_DESKTOP=river
+
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+systemctl --user start river-session.target
 
 MOD="Super"
 MOD2="Alt"
