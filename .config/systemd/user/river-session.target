@@ -1,5 +1,5 @@
 [Unit]
 Description=River compositor session
-After=graphical-session-pre.target
 BindsTo=graphical-session.target
 Wants=graphical-session-pre.target
+After=graphical-session-pre.target
