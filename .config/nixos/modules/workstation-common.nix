@@ -111,6 +111,7 @@
     python3
     slurp
     tmux
+    tree-sitter
     unzip
     virtiofsd
     wget

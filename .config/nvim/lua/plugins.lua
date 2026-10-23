@@ -207,17 +207,8 @@ local packages = {
   {
     "nvim-treesitter/nvim-treesitter", 
     build = ":TSUpdate",
-    config = function()
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python", "go", "gomod", "gowork", "htmldjango", "nix" },
-        sync_install = false,
-        highlight = { enable = true },
-        indent = { enable = true },
-      })
-    end
   },
 }
 
 require("lazy").setup(packages)
+require("nvim-treesitter").install({ "lua", "vim", "vimdoc", "javascript", "html", "css", "rust", "python", "go", "gomod", "gowork", "htmldjango", "nix" })
