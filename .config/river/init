@@ -172,6 +172,7 @@ exec lxpolkit &
 riverctl default-layout bsp-layout
 
 exec river-bsp-layout -i 5 -o 10 &
+exec wayvnc -o HDMI-A-1 0.0.0.0 5901 -Ldebug
 
 # Spawn KeePassXC on tag 5
 riverctl rule-add -app-id org.keepassxc.KeePassXC tags 10000
