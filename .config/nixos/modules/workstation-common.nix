@@ -56,7 +56,6 @@
       bluez
       bluez-tools
       chromium
-      discord
       firefox
       freetube
       gimp
