@@ -58,6 +58,7 @@
       chromium
       firefox
       freetube
+      gamemode
       gimp
       grim
       hledger
