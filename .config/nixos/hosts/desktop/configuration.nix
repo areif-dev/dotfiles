@@ -23,6 +23,7 @@
   programs = {
     river-classic.enable = true;
     waybar.enable = true;
+    wayvnc.enable = true;
   };
 
   # Open ports in the firewall.
