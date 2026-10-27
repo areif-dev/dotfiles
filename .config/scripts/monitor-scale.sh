@@ -21,5 +21,5 @@ do
   scale=$(echo "scale=0; $dpi / 100" | bc)
   scale=$((scale>1 ? scale : 1))
 
-  wlr-randr --output ${display_adapters[$i]} --scale $scale
+  wlr-randr --output ${display_adapters[$i]} --scale $scale --adaptive-sync enabled
 done
