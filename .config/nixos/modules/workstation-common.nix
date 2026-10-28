@@ -63,13 +63,13 @@
       grim
       hledger
       keepassxc
-      llama-cpp
       libreoffice-stable
       mullvad-vpn
       nil
       nixfmt
       nodejs
       neovim
+      opencode
       papirus-icon-theme
       pavucontrol
       plocate

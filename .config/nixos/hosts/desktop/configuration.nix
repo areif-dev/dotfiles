@@ -26,6 +26,11 @@
     wayvnc.enable = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    llama-cpp-vulkan
+    vulkan-tools
+  ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
