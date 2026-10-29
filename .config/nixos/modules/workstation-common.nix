@@ -128,11 +128,7 @@
   ];
 
   programs = {
-    zsh = {
-      enable = true;
-      ohMyZsh.enable = true;
-      autosuggestions.enable = true;
-    };
+    river-classic.enable = true;
 
     steam = {
       enable = true;
@@ -144,6 +140,14 @@
     thunderbird.enable = true;
 
     virt-manager.enable = true;
+
+    waybar.enable = true;
+
+    zsh = {
+      enable = true;
+      ohMyZsh.enable = true;
+      autosuggestions.enable = true;
+    };
   };
 
   security.rtkit.enable = true;

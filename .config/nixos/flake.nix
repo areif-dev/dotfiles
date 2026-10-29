@@ -60,7 +60,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+              # home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.aj = import ./hosts/laptop/home.nix;
             }

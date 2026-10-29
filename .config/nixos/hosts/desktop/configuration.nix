@@ -21,8 +21,6 @@
   networking.hostName = "desktop"; # Define your hostname.
 
   programs = {
-    river-classic.enable = true;
-    waybar.enable = true;
     wayvnc.enable = true;
   };
 
