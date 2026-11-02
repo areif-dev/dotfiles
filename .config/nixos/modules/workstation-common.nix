@@ -107,6 +107,7 @@
     killall
     libgcc
     neovim
+    nvtopPackages.amd
     phinger-cursors
     python3
     slurp
