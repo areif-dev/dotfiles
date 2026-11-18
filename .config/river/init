@@ -151,7 +151,7 @@ do
 done 
 
 # Set the wallpaper
-exec swaybg -i $HOME/Pictures/Backgrounds/hexcore.png --mode fill &
+exec swaybg -i $HOME/Pictures/Backgrounds/earth-rise.jpg --mode fill &
 
 # Set a screen timeout
 exec swayidle -w \
