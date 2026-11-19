@@ -17,3 +17,8 @@
 - The only exception to these rules is for very simple functions whose use is obvious (e.g. getters and setters).
     - In these cases, stick to a one-line comment adding a bit of additional context or guidance. 
 - Avoid using in-line comments. If the code you write needs explaining in-line, then rewrite the code so it is more understandable. 
+
+# Git
+
+- Never commit to git unless explicitly asked to do so.
+- You may use readonly git commands at any time. 
