@@ -46,7 +46,7 @@ riverctl map normal $MOD+Control J swap next
 riverctl map normal $MOD+Control K swap previous 
 riverctl map normal $MOD+Shift Period send-to-output next
 riverctl map normal $MOD+Shift Comma send-to-output previous
-riverctl map normal $MOD Return zoom
+riverctl map normal $MOD+Shift Return zoom
 
 # Manually moving containers
 riverctl map normal $MOD+$MOD2 H move left 100
@@ -78,7 +78,7 @@ riverctl set-cursor-warp on-focus-change
 riverctl map normal $MOD P spawn "grim - | wl-copy"
 
 # Floating / Fullscreen
-riverctl map normal $MOD+Shift Return toggle-float
+riverctl map normal $MOD Return toggle-float
 riverctl map normal $MOD F toggle-fullscreen
 
 ### Tag Controls ###
